@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+    <mapper namespace="metal.gear.mapper.TorrentMapper">
+        <insert id="add" parameterType="Torrent" >
+            insert into torrent ( label,src ) values (#{label},#{src})    
+        </insert>
+        <delete id="delete" parameterType="Torrent" >
+            delete from torrent where id= #{id}   
+        </delete>
+         
+        <select id="get" parameterType="int" resultType="Torrent">
+            select * from   Torrent  where id= #{id}    
+        </select>
+ 
+        <update id="update" parameterType="Torrent" >
+            update Torrent set label=#{label}, src = #{src}  where id=#{id}    
+        </update>
+        <select id="list" resultType="Torrent">
+            select * from   Torrent      
+        </select>       
+    </mapper>
