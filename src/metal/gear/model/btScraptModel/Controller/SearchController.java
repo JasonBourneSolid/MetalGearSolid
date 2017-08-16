@@ -86,16 +86,5 @@ public class SearchController {
 			}
 
 	}
-		@RequestMapping(value="search/collectKeyWord")
-		public void collectKeyWord(){
-			Rule rule = new Rule();
-			String[] companys = new String[]{"PRESTIGEp","IDEA%20POCKETp","kawaiip","E%20BODYp","MAXINGp","ALICE%20JAPANp","KMPp","SODp",};
-			rule.setRequestMoethod(Rule.GET);
-			rule.setType(Rule.CLASS);
-			for(int i = 0;i<companys.length;i++){
-				String url = "http://www.cckke.com/fanhao/liebiaocompany#.html".replaceAll("company", companys[i]);
-				rule.setUrl(url);
-				searchService.collectKeyWord(rule);
-			}		
-		}
+		
 }
